@@ -2,6 +2,6 @@
 
 ##UIScrollView
 
-1. PageEnabel
+1. PageEnabe
 2. Target Offset
 3. Lazy loading
