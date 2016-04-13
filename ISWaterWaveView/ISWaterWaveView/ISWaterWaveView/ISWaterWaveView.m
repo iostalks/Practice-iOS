@@ -89,7 +89,12 @@
 - (void)animateWave:(CADisplayLink *)displayLink
 {
     _offsetX += self.moveSpeed;
-    _waveLayer.path = [self getCurrentWavePath];
+    
+    CGPathRef pathRef = [self getCurrentWavePath];
+    
+    _waveLayer.path = pathRef;
+    
+    CGPathRelease(pathRef);
     
 }
 
@@ -107,6 +112,7 @@
     CGPathAddLineToPoint(path, NULL, 0, self.frame.size.height);
     CGPathCloseSubpath(path);
     
+   
     return path;
 }
 
